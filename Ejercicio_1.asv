@@ -6,14 +6,19 @@ Inicializacion_Variables
 t0 = 0 ; % Tiempo Inicial [s]
 tf = 25 ; % Tiempo Final [s]
 x0 = [0 0] ; % Condiciones Iniciales
+x0=[0 0]; % Condiciones iniciales
 
-h1 = 0.001;  % Pasos de solución en segundos (?t = 1 ms)
-M1 = (tf-t0)/h1; 
-[t, X]= Ec_Dif_Runge_Kutta_O4_Sistemas('Ec_Dif_1',t0, tf, x0, M1); 
-y = X(:,1);  % Solución aproximada de la ecuación diferencial
+% Análisis con 20 pasos de Iteración
+h1 = 0.001;  % Pasos de solución 
+M1 = (tF-t0)/h1; % At
+
+[t,X]= Ec_Dif_Runge_Kutta_O4_Sistemas('Ec_Dif_Ejercicio1',t0,tF,x0,M1);
+
+%t = RKS(:,1);    % vector de tiempo
+y = X(:,1);  % Solución aproximada de la Ec. Dif.
 H=figure;
-set(H,'name','TP INTEGRADOR 2024 - Ejercicio 1','position',[20 50 1200 600],'NumberTitle','off');
+set(H,'name','TP FINAL - Ejercicio 1','position',[20 50 1200 600],'NumberTitle','off');
 plot(t,y,'r');
 grid
 xlabel('t (s)');
-ylabel('x (t) ');
+ylabel('x(t)')
