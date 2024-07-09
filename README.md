@@ -1,4 +1,5 @@
 # tp_MN_Almada_Fava
 
-tipeo de prueba 9/07/2024
-tipeo 2
+Universidad Favaloro, Métodos Númericos
+Trabajo Práctico Integrador 2024
+Almada Melody y Fava Lara
