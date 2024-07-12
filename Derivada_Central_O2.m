@@ -1,34 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Ejercicio Nro. 0 TP#6 Métodos Numéricos
-%%%
-%%% Aproximación central de derivada de orden cuadrático
-%%%
-%%% function [L,n] = Derivada_Central_O2(f,x,Tol)
-%%%
-%%% Parámetros de Entrada:
-%%%
-%%%       f = Nombre de la función a derivar (almacenada en un .m)
-%%%       x = abscisa donde se evaluará la derivada
-%%%       Tol = Tolerancia de Error para las aproximaciones k-ésimas de la
-%%%       derivada
-%%%
-%%% Parámetros de Salida:
-%%%
-%%%      L = [H,D,E] matriz que contiene los siguientes vectores:
-%%%             H = vector conteniendo el tamaño de los Ax
-%%%             D = vector que contiene las aproximaciones k-esimas de la
-%%%             derivada
-%%%             E = vector que contiene el error en la derivada k-ésima y
-%%%             la k-ésima anterior
-%%%      n = el valor de k en donde se produce la mejor aproximación de la
-%%%      derivada
-%%%
-%%% Dr. Ing. Franco Pessana
-%%% Período Lectivo 2015
-%%% FICEN
-%%% Universidad Favaloro
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 function [L,n] = Derivada_Central_O2(f,x,Tol)
 
 if nargin<3
