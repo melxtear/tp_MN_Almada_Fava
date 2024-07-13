@@ -1,0 +1,35 @@
+%ejercicio 9
+Ejercicio_8
+%ejercio 9 a)
+[A,B,CC,]=Ajuste_Lineal_MC(X,x_s_int)
+disp('Pendiente:')
+A
+disp('Ordenada de Origen:')
+B
+disp('Coeficiente de Correlación:')
+CC 
+
+%ejercicio 9 b)
+E=0
+for k=1:M1+1
+    E=E+((X(k)-x_s_int(k))^2);
+end
+
+E=(1/(M1+1))*sqrt(E);
+Xt=-1:h1:3.5;
+y=A*Xt+B;
+%Grafico de la nube de puntos junto a 
+%las rectas de ajuste lineal
+H=figure;
+set(H,'name','TP FINAL - Ejercicio 10','position',[20 50 1200 600],'NumberTitle','off');
+plot(X,xs,'rx',Xt,y,'b');
+grid
+xlabel('t (s)');
+ylabel('x(t)');
+
+% Create textbox
+annotation(H,'textbox',...
+    [0.149263762501475 0.810815567729297 0.184793070259869 0.0825688073394497],...
+    'String',{'Error Cuadratico Medio';['Error = ' num2str(E)]},...
+    'FitBoxToText','off',...
+    'BackgroundColor',[0.800000011920929 0.800000011920929 0.800000011920929]);

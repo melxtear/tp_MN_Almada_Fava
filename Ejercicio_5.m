@@ -35,7 +35,7 @@ Potencia_V_Simpson_Compuesta =(1/(tf-t0))*Integral_V_Simpson_Compuesta;
 
 
 H3=figure;
-set(H3,'name','TP INTEGRADOR - Ejercicio 6','position',[20 50 1200 600],'NumberTitle','off');
+set(H3,'name','TP INTEGRADOR 2024 - Ejercicio 6','position',[20 50 1200 600],'NumberTitle','off');
 area(t,X,'FaceColor',[0.4940 0.1840 0.5560],'EdgeColor',[0.494 0.184 0.556]);
 grid
 xlabel('t(s)');
@@ -57,7 +57,7 @@ annotation(H3,'textbox',...
     'BackgroundColor',[0.800000011920929 0.800000011920929 0.800000011920929]);
 
 J=figure;
-set(J,'name','TP INTEGRADOR - Ejercicio 6','position',[20 50 1200 600],'NumberTitle','off');
+set(J,'name','TP INTEGRADOR 2024- Ejercicio 6','position',[20 50 1200 600],'NumberTitle','off');
 area(t,Velocidades_1,'FaceColor',[0.4945 0.1845 0.5565],'EdgeColor',[0.4945 0.1845 0.5565]);
 grid
 xlabel('t(s)');

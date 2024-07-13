@@ -9,6 +9,7 @@ for k=1:M2
     X_s(k)=X(100*k-99); %almacenamos en el nuevo vector una muestra cada 100 para realizar el submuestreo
 end
 X_s(M2+1)=(a*m1*g)/((a^2)*densidad*g+k*A);
+X_s
 %1:M:end
 TS2=0.1; 
 ts=t0:TS2:tf;
