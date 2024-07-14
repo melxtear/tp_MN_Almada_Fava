@@ -1,7 +1,7 @@
 %ejercicio 9
 Ejercicio_8
 %ejercio 9 a)
-X_1=X(:,1);
+X_1=y;
 [A,B,CC]=Ajuste_Lineal_MC(X_1,x_s_int);
 disp('Pendiente:')
 A
@@ -17,7 +17,7 @@ for k=1:M1+1
 end
 
 E=(1/(M1+1))*sqrt(E);
-Xt=-0.5:h1:2;
+Xt=X_1;
 y=A*Xt+B;
 
 H9=figure;

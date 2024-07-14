@@ -10,8 +10,10 @@ x0 = [0 0] ; % Condiciones Iniciales
 h1 = 0.001;  % Pasos de solución en segundos (?t = 1 ms)
 M1 = (tf-t0)/h1; 
 [t, X]= Ec_Dif_Runge_Kutta_O4_Sistemas('Ec_Dif_1',t0, tf, x0, M1); 
+%t es el vector tiempo, X almacena en una matriz de dos columnas la posición x(t)
 n=size(X);
-y = X(:,1);  % Solución aproximada de la ecuación diferencial
+y = X(:,1);  % Solución aproximada de la ecuación diferencial, solo nos interesa la 1era columna que almacena las posiciones x(t)
+y
 H=figure;
 set(H,'name','TP INTEGRADOR 2024 - Ejercicio 1','position',[20 50 1200 600],'NumberTitle','off');
 plot(t,y,'r');

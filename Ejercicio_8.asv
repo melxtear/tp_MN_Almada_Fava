@@ -15,7 +15,7 @@ X_s=zeros(M2+1,1);
 for k=1:M2+1
     X_s(k)=X(100*k-99); %almacenamos en el nuevo vector una muestra cada 100 para realizar el submuestreo
 end
-%X_s(M2+1)=(a*m1*g)/((a^2)*densidad*g+k*A);
+X_s(M2+1)=(a*m1*g)/((a^2)*densidad*g+k*A);
 X_s
 %1:M:end
 TS2=0.1; 
@@ -31,7 +31,7 @@ ylabel('x (t) (metros)');
 MC=Spline_Cubica(ts,X_s');
 MC
 
-N=length(MC);
+N=size(MC,1);
 L=100;
 x=zeros(N,L+1);
 for k=1:N
@@ -46,9 +46,9 @@ x_s_int=zeros(size(t));
 H8=figure;
 set(H8, 'name', 'TP INTEGRADOR 2024 - Ejercicio 8', 'position', [20 50 1200 600], 'NumberTitle', 'off');
 for k=1:N
-    Poli_Int(k,:) = Eval_Polinomio2(x(k,:), MC(k,:), ts(k)); 
-   %Poli_Int(k,:) = Poli_Int_k(:); % Asegurarse de que sea un vector fila
-    plot(x(k,:),Poli_Int(k,:));
+    Poli_Int = Eval_Polinomio2(x(k,:), MC(k,:), ts(k)); 
+   % Poli_Int(k,:) = Poli_Int_k(:); % Asegurarse de que sea un vector fila
+    plot(x(k,:),Poli_Int(k,:))
     hold on
 end
 hold off
