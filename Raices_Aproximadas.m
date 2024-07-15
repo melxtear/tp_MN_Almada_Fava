@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%
-%%% Ejercicio Nro. 7 TP#4 Métodos Numéricos
+%%% Reutilizamos Algoritmo de TP#4 Métodos Numéricos
 %%%
 %%% Aproximación a las raices de f(x)=0 para un intervalo considerado
 %%%
@@ -8,14 +8,17 @@
 %%%
 %%% Parámetros de Entrada:
 %%%
-%%%       X = Vector conteniendo el intervalo con la resolución deseada
+%%%       y = Vector conteniendo el intervalo con la resolución deseada
 %%%           de estimación de raíces 
 %%%       epsilon = Tolerancia para la aproximación de los ceros pares
+%%%       t = vector de tiempos
 %%%
 %%% Parámetros de Salida:
 %%%
 %%%      R   = Vector conteniendo las raíces aproximadas de f(x),
 %%%            resolución dependiente de X
+%%%
+
 function [R,r] = Raices_Aproximadas(t,epsilon,y)
 
 if nargin<3
