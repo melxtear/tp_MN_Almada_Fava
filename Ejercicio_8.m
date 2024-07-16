@@ -1,54 +1,59 @@
-%ejercicio 8
-%Teniendo en cuenta la señal de posición submuestreada de la masa m2, xs[n] del ejercicio anterior, se pide: 
-%Encontrar una interpolación mediante polinomios interpoladores de tercer grado, es decir, mediante Spline 
-%Cúbicas. Esta señal interpolada se denominará . Realice un gráfico conjunto de las posiciones 
-%submuestreadas y su correspondiente interpolación polinomial, con un ?? = 1 ms. De esta forma, se 
-%obtendrá una señal interpolada de posición de la masa ?? de la misma longitud temporal de la señal original 
-%de la posición de la masa ??, es decir, (?). 
+% TP INTEGRADOR - EJERCICIO 8 - ALMADA MELODY Y LARA FAVA
+% 
+% Teniendo en cuenta la señal de posición submuestreada de la masa m2, xs[n] del ejercicio anterior, se pide: 
+% Encontrar una interpolación mediante polinomios interpoladores de tercer grado, es decir, mediante Spline Cúbicas. 
+% Esta señal interpolada se denominará xs_intc(t). Realice un gráfico conjunto de las posiciones submuestreadas y su 
+% correspondiente interpolación polinomial, con un ?t = 1 ms. De esta forma, se obtendrá una señal interpolada de 
+% posición de la masa m2 de la misma longitud temporal de la señal original de la posición de la masa m2, es decir, xm2(t). 
 
 Inicializacion_Variables
-Ejercicio_1
-X_=y;
-M2=M1/100;%Reducimos la muestra 100 veces
-X_s=zeros(M2+1,1);
 
-for k=1:M2+1
-    X_s(k)=X(100*k-99); %almacenamos en el nuevo vector una muestra cada 100 para realizar el submuestreo
+% trabajamos al principio con el código del EJERCICIO 7 por una cuestion de
+% comodidad en vez de llamar a la función
+Ejercicio_1
+X_ = y; 
+M2 = M1/100;%Reducimos la muestra 100 veces
+X_s = zeros(M2+1,1);
+
+for k = 1:M2+1
+    X_s(k) = X(100*k-99); %almacenamos en el nuevo vector una muestra cada 100 para realizar el submuestreo
 end
 %X_s(M2+1)=(a*m1*g)/((a^2)*densidad*g+k*A);
-X_s
-%1:M:end
-TS2=0.1; 
-ts=t0:TS2:tf;
+X_s % imprimimos por pantalla los valores del submuestreo
+TS2 = 0.1; 
+ts = t0:TS2:tf;
 
-H=figure;
-set(H,'name','TP INTEGRADOR 2024 - Ejercicio 7','position',[20 50 1200 600],'NumberTitle','off');
-plot(t,X_,'r',ts,X_s,'o') %GRAFICAMOS SUBMUESTREO POR ENCIMA DEL MUESTREO ORIGINAL (marcamos los puntos)
+H10 = figure(10);
+set(H10,'name','TP INTEGRADOR 2024 - Ejercicio 7','position',[20 50 1200 600],'NumberTitle','off');
+plot(t,X_,'r',ts,X_s,'o') % GRAFICAMOS SUBMUESTREO POR ENCIMA DEL MUESTREO ORIGINAL (marcamos los puntos)
 grid
 xlabel('t (s)');
 ylabel('x (t) (metros)');
 
-MC=Spline_Cubica(ts,X_s');
-MC
+% empezamos calculando la matriz interpolada con Spline Cubicas
+MC = Spline_Cubica(ts,X_s');
+disp('Coeficientes del polinomio calculados con Spline Cúbicas: ')
+MC % imprimimos por pantalla los coeficientes calculados con Spline Cubicas
 
-N=length(MC);
+N = length(MC);
 L=100;
-x=zeros(N,L+1);
-for k=1:N
-    d=0.001; %armado de abscisas temporales, es delta t=1ms
-    x(k,:)=ts(k):d:ts(k+1);
+x = zeros(N,L+1);
+for k = 1:N
+    d=0.001; % armado de abscisas temporales, es delta t=1ms
+    x(k,:) = ts(k):d:ts(k+1);
 end
 
 % Armado y graficado de los polinomios interpoladores con mejor resolucion
-n2=size(x,2);
-Poli_Int=zeros(N,n2);
-x_s_int=zeros(size(t));
-H8=figure;
-set(H8, 'name', 'TP INTEGRADOR 2024 - Ejercicio 8', 'position', [20 50 1200 600], 'NumberTitle', 'off');
-for k=1:N
-    Poli_Int(k,:) = Eval_Polinomio2(x(k,:), MC(k,:), ts(k)); 
-   %Poli_Int(k,:) = Poli_Int_k(:); % Asegurarse de que sea un vector fila
-    plot(x(k,:),Poli_Int(k,:));
+n2 = size(x,2);
+Poli_Int = zeros(N,n2);
+x_s_int = zeros(size(t));
+H11 = figure(11);
+set(H11, 'name', 'TP INTEGRADOR 2024 - Ejercicio 8', 'position', [20 50 1200 600], 'NumberTitle', 'off');
+
+for k = 1:N
+    Poli_Int(k,:) = Eval_Polinomio2(x(k,:), MC(k,:), ts(k)); % evaluamos en polinomio con las abscisas en un entorno t(k)
+    % MC contiene los coeficientes del polinomio
+    plot(x(k,:),Poli_Int(k,:)); % a medida que se evalua, se grafica
     hold on
 end
 hold off
@@ -56,13 +61,14 @@ grid
 xlabel('t (s)');
 ylabel('x(t) (metros)');
 
-cont=1;
-for k=1:N
-    for i=1:L
-        x_s_int(cont)=Poli_Int(k,i);
-        cont=cont+1;
+
+cont = 1;
+for k = 1:N
+    for i = 1:L
+        x_s_int(cont) = Poli_Int(k,i);
+        cont = cont+1;
     end
    
 end
-x_s_int(M1+1)=x_s_int(M1);
+x_s_int(M1+1) = x_s_int(M1);
 
