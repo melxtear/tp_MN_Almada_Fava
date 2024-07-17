@@ -25,4 +25,4 @@ set(H1,'name','TP INTEGRADOR 2024 - Ejercicio 1','position',[20 50 1200 600],'Nu
 plot(t,y,'r');
 grid
 xlabel('t (s)');
-ylabel('x (t) (metros ');
+ylabel('x (t) (metros) ');

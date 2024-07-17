@@ -15,11 +15,11 @@ Wn = (k_total/m_total)^(1/2);
 epsilon = 0.001;
 X_tce = pi/(Wn*sqrt(1-epsilon^2));
 
-%calculamos raices aproximadas
+% calculamos raices aproximadas
 R_Posiciones =  Raices_Aproximadas(t, epsilon, X_6);
 Xf = zeros(size(R_Posiciones));
-%xf =(a*m1*g)/((a^2)*densidad*g+k*A);
-%Xf(:) = xf;
+% xf =(a*m1*g)/((a^2)*densidad*g+k*A);
+% Xf(:) = xf;
 
 R_Velocidades = Raices_Aproximadas(t,epsilon,Velocidades_6);
 Vf = zeros(size(R_Posiciones));
@@ -29,7 +29,7 @@ R_Posiciones
 disp('Tiempos de cruce de velocidad: ')
 R_Velocidades
 
-%Graficamos las raices obtenidas con el método de Raíces Apróximadas en el gráfico de posiciones X
+% Graficamos las raices obtenidas con el método de Raíces Apróximadas en el gráfico de posiciones X
 H8 = figure(8);
 set(H8,'name','TP INTEGRADOR 2024 - Ejercicio 6','position',[20 50 1200 600],'NumberTitle','off');
 plot(t,X_6,'r',R_Posiciones,Xf,'bo');
@@ -38,7 +38,7 @@ xlabel('t (s)');
 ylabel('x (t)');
 title('Posicion de la masa');
 
-%Graficamos las raices obtenidas con el método de Raíces Aproximadas en el gráfico de velocidades V
+% Graficamos las raices obtenidas con el método de Raíces Aproximadas en el gráfico de velocidades V
 H9 = figure(9);
 set(H9,'name','TP INTEGRADOR 2024 - Ejercicio 6','position',[20 50 1200 600],'NumberTitle','off');
 plot(t,Velocidades_6,'r',R_Velocidades,Vf,'bo');
