@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%
-%%% Utilizamos código de Ejercicio Nro. 12 TP#2 Métodos Numéricos
+%%% Reutilizamos código de Ejercicio Nro. 12 TP#2 Métodos Numéricos
 %%%
 %%% Resolución de Sistemas Ecuaciones Diferenciales de primer Orden:
 %%%         x1'=f1(t,x1,x2,...,xn)

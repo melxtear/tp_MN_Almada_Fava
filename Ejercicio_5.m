@@ -4,41 +4,58 @@
 % de la masa m2(Ejercicio#4), es decir su energía en el tiempo de análisis.
 
 Inicializacion_Variables
+t0 = 0;
+tf = 25;
+x0 = [0 0];
 
+h1 = 0.001;
+M1= (tf-t0)/h1;
+
+[t,x] = Ec_Dif_Runge_Kutta_O4_Sistemas('Ec_Dif_1',t0, tf, x0, M1);
 % en este ejercicio se calculó la posición de la masa m2 en un intervalo de tiempo, reutilizamos t y X obtenidos (columna de tiempo y de posición)
-Ejercicio_1
 
+X_ = x(:,1);
+Velocidades = Derivada_Central_O4(X_,t);
 % en este ejercicio se calculó la velocidad de la masa m2 con derivacion numerica, reutilizamos t y V obtenidos
-Ejercicio_4
 
-X_1 = X(:,1); % almacenamos en un nuevo vector las velocidades obtenidas del EJERCICIO 1
-Velocidades_1=Velocidades; % almacenamos en un nuevo vector las velocidades obtenidas del EJERCICICIO 4
+%X_1 = X(:,1); % almacenamos en un nuevo vector las velocidades obtenidas del EJERCICIO 1
+%Velocidades_1 = Velocidades; % almacenamos en un nuevo vector las velocidades obtenidas del EJERCICICIO 4
 
 % elevo al cuadrado a todos los elementos de los vectores de posición y velocidad
-XC = X_1.^2;
-XpC = abs(Velocidades_1.^2);
+XC = X_.^2;
+XpC = (Velocidades.^2);
 
 % Calculamos las integrales
 % Usamos la Regla Trapezoidal Compuesta
-Integral_X_Trapezoidal_Compuesta = Regla_Trapezoidal_Compuesta(XC,t0,tf,M1); %posiciones
-Integral_V_Trapezoidal_Compuesta = Regla_Trapezoidal_Compuesta(XpC,t0,tf,M1); %velocidades
+Integral_X_Trapezoidal_Compuesta = Regla_Trapezoidal_Compuesta(XC,t0,tf,M1); % posiciones, valor = 0.9168
+Integral_V_Trapezoidal_Compuesta = Regla_Trapezoidal_Compuesta(XpC,t0,tf,M1); % velocidades, valor = 0.0001668
 
 % Calculo de potencia de posicion y velocidad con formula dada en consigna
 Potencia_X_Trapezoidal_Compuesta = (1/(tf-t0))*Integral_X_Trapezoidal_Compuesta;  
 Potencia_V_Trapezoidal_Compuesta =(1/(tf-t0))*Integral_V_Trapezoidal_Compuesta;
 
 % Usamos la Regla de Simpson Compuesta
-Integral_X_Simpson_Compuesta = Regla_Simpson_Compuesta(XC,t0,tf,M1/2);
-Integral_V_Simpson_Compuesta = Regla_Simpson_Compuesta(XpC,t0,tf,M1/2);
+Integral_X_Simpson_Compuesta = Regla_Simpson_Compuesta(XC,t0,tf,M1/2); % valor =0.9168
+Integral_V_Simpson_Compuesta = Regla_Simpson_Compuesta(XpC,t0,tf,M1/2); % valor = 0.0001668
 % Calculo de potencia de posicion y velocidad con formula dada en consigna
 Potencia_X_Simpson_Compuesta =(1/(tf-t0))*Integral_X_Simpson_Compuesta;
 Potencia_V_Simpson_Compuesta =(1/(tf-t0))*Integral_V_Simpson_Compuesta;
+
+disp('Valor Integral Trapezoidal Compuesta X: ')
+Integral_X_Trapezoidal_Compuesta
+disp('Valor Integral Trapezoidal Compuesta V: ')
+Integral_V_Trapezoidal_Compuesta
+
+disp('Valor Integral Simpson Compuesta X: ')
+Integral_X_Simpson_Compuesta
+disp('Valor Integral Simpson Compuesta V: ')
+Integral_V_Simpson_Compuesta
 
 % Graficamos la potencia obtenida a partir de aplicar de la Regla Trapezoidal Compuesta y Simpson Compuesta 
 % para las posiciones X
 H6 = figure(6);
 set(H6,'name','TP INTEGRADOR 2024 - Ejercicio 5','position',[20 50 1200 600],'NumberTitle','off');
-area(t,X,'FaceColor',[0.4940 0.1840 0.5560],'EdgeColor',[0.494 0.184 0.556]);
+area(t,x,'FaceColor',[0.4940 0.1840 0.5560],'EdgeColor',[0.494 0.184 0.556]);
 grid
 xlabel('t(s)');
 ylabel('x(t)[metros]');
@@ -62,7 +79,7 @@ annotation(H6,'textbox',...
 % para las velocidades (Velocidades_1)
 H7 = figure(7);
 set(H7,'name','TP INTEGRADOR 2024- Ejercicio 5','position',[20 50 1200 600],'NumberTitle','off');
-area(t,Velocidades_1,'FaceColor',[0.4945 0.1845 0.5565],'EdgeColor',[0.4945 0.1845 0.5565]);
+area(t,Velocidades,'FaceColor',[0.4945 0.1845 0.5565],'EdgeColor',[0.4945 0.1845 0.5565]);
 grid
 xlabel('t(s)');
 ylabel('v(t)[metros/s]');

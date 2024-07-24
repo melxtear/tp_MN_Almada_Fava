@@ -1,7 +1,7 @@
 % TP INTEGRADOR 2024 - EJERCICIO 7 - ALMADA MELODY Y LARA FAVA
 %
 % La técnica de Submuestreo consiste en tomar las muestras m-ésimas de una señal digital, es decir, reduciendo su 
-% frecuencia de muestreo original ? veces. En consecuencia:x[n] ? x[nTS1] ? x[n] ? x[nM]? x[MTS2] 
+% frecuencia de muestreo original 100 veces. En consecuencia:x[n] ? x[nTS1] ? x[n] ? x[nM]? x[MTS2] 
 % con TS2 =MTS1 y TS1 = 1/fs1.
 %
 % Realice un submuestreo de la posición de la masa Xm2(t) del Ejercicio#1, con un período de muestreo 100 veces 

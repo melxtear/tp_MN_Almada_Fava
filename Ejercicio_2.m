@@ -20,7 +20,7 @@ disp('Ultima posicion de la masa m2 calculada con Runge Kutta: ');
 x_computacional % nos dio 0.2002
 
 T = t0:0.001:tf;
-disp('Ultima posicion de la masa m2 calculada la expresión analítica:');
+disp('Ultima posicion de la masa m2 calculada la expresión analítica: ');
 x_ = (a*m1*g)/((a^2)*densidad*g+k*A); %expresión analitica dada en consigna
 x_ % nos dio 0.2001
 X_ = zeros(size(T));

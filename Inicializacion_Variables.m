@@ -1,4 +1,4 @@
-%inicializamos las variables con las cuales vamos a trabajar a lo largo del TP
+% inicializamos las variables con las cuales vamos a trabajar a lo largo del TP
 m1=510;% [kg]
 m2=50;% [kg]
 RH=3*10^3;% [Ns/m^3]

@@ -29,7 +29,7 @@ end
 y_aproximada = X_(:,1);  % Solucion aproximada de la Ecuación Diferencial
 disp('Valores de la posicion de la masa en funcion de t: ')
 y_aproximada
-%Graficamos y_aproximada (contiene las posiciones) en funcion de t
+% Graficamos y_aproximada (contiene las posiciones) en funcion de t
 
 H3 = figure(3);
 set(H3,'name','TP INTEGRADOR 2024 - Ejercicio 3','position',[20 50 1200 600],'NumberTitle','off');

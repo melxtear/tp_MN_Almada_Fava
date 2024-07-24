@@ -18,6 +18,7 @@
 %%%      R   = Vector conteniendo las raíces aproximadas de f(x),
 %%%            resolución dependiente de X
 %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function [R,r] = Raices_Aproximadas(t,epsilon,y)
 

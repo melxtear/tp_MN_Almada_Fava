@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%
-%%% Ejercicio Nro. 1 TP#3 Métodos Numéricos
+%%% Reutiizamos código de Ejercicio Nro. 1 TP#3 Métodos Numéricos
 %%%
 %%% Aproximación Lineal por Mínimos Cuadrados:
 %%%

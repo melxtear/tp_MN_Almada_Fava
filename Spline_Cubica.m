@@ -1,5 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%
+%%% Reutilizamos código de TP #5
+%%%
 %%% Interpolación por Splines Cúbicas
 %%% 
 %%% Se recibe un conjunto de (N+1) puntos a interpolar:

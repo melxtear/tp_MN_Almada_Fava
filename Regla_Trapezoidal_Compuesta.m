@@ -9,11 +9,12 @@ end
 
 h = (b-a)/M;
 Sum = 0;
-for k=1:(M-1)
+for k=2:(M-1)
     %Sum = Sum + feval(f,x0+k*h);
     Sum = Sum + X(k);
 end
 S = h*(X(1) + X(M))/2 + h*Sum;
+end
 
 
 
