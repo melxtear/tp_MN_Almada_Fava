@@ -58,7 +58,7 @@ end
 Valor_Medio_TCE = sum(TCE)/(length(TCE));
 Desvio_Estandar_TCE = sqrt(sum((TCE-Valor_Medio_TCE).^2)/(length(TCE)-1));
 Wn = sqrt(k_total/m_total);
-Ep = bt/(2*sqrt(k_total*m_total));
+Ep = b_total/(2*sqrt(k_total*m_total));
 
 %calculamos TCE teorico
 TCER = pi/(Wn*sqrt(1-Ep^2));

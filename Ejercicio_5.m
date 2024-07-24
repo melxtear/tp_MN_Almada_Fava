@@ -5,20 +5,18 @@
 
 Inicializacion_Variables
 
-% en este ejercicio se calculó la posición de la masa m2 en un intervalo de tiempo
-% reutilizamos t y X obtenidos (columna de tiempo y de posición)
+% en este ejercicio se calculó la posición de la masa m2 en un intervalo de tiempo, reutilizamos t y X obtenidos (columna de tiempo y de posición)
 Ejercicio_1
 
-% en este ejercicio se calculó la velocidad de la masa m2 con derivacion numerica 
-% reutilizamos t y V obtenidos
+% en este ejercicio se calculó la velocidad de la masa m2 con derivacion numerica, reutilizamos t y V obtenidos
 Ejercicio_4
 
 X_1 = X(:,1); % almacenamos en un nuevo vector las velocidades obtenidas del EJERCICIO 1
-Velocidades_1=Velocidades(:,1); % almacenamos en un nuevo vector las velocidades obtenidas del EJERCICICIO 4
+Velocidades_1=Velocidades; % almacenamos en un nuevo vector las velocidades obtenidas del EJERCICICIO 4
 
 % elevo al cuadrado a todos los elementos de los vectores de posición y velocidad
 XC = X_1.^2;
-XpC = Velocidades_1.^2;
+XpC = abs(Velocidades_1.^2);
 
 % Calculamos las integrales
 % Usamos la Regla Trapezoidal Compuesta

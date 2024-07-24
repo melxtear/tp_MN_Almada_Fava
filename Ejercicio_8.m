@@ -20,7 +20,7 @@ for k = 1:M2+1
 end
 %X_s(M2+1)=(a*m1*g)/((a^2)*densidad*g+k*A);
 X_s % imprimimos por pantalla los valores del submuestreo
-TS2 = 0.1; 
+TS2 = 0.1; %%VERRR
 ts = t0:TS2:tf;
 
 H10 = figure(10);

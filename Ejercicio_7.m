@@ -14,7 +14,7 @@ X_= X(:,1);
 M2 = M1/100; % Reducimos la muestra M1 calculada en el EJERCICIO 1, 100 veces
 X_s = zeros(M2+1,1);
 
-for k = 1:M2
+for k = 1:M2 
     X_s(k) = X(100*k-99); % almacenamos en el nuevo vector una muestra cada 100 para realizar el submuestre
 end
 % X_s(M2+1) = (a*m1*g)/((a^2)*densidad*g+k*A);
